@@ -1,3 +1,5 @@
+import 'package:apk1/views/login_view.dart';
+import 'package:apk1/views/dashboard/dashboard_view.dart';
 import 'package:flutter/material.dart';
 
 class LoginView extends StatelessWidget {
@@ -46,7 +48,11 @@ class LoginView extends StatelessWidget {
                                 ),
                             ),
                           ),
-                          ElevatedButton(onPressed: (){}, 
+                          ElevatedButton(onPressed: (){
+                            Navigator.pushReplacement(context, MaterialPageRoute(builder: (c)=>Dashboardview()
+                            )
+                          );
+                          }, 
                             child: Padding(
                               padding: const EdgeInsets.symmetric(horizontal: 40),
                               child: Text('Login'),
