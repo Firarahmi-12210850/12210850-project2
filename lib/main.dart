@@ -5,18 +5,18 @@ import 'package:provider/provider.dart';
 
 main(List<String> args) {
   runApp(MultiProvider(
-    providers: [
-      ChangeNotifierProvider(create: (bc)=>DashboardProvider()),
-    ],
-    builder: (context, Widget) {
-      return  MaterialApp(
-        theme: ThemeData(
-          appBarTheme: AppBarTheme(
+      providers: [
+        ChangeNotifierProvider(create: (bc) => DashboardProvider()),
+        ChangeNotifierProvider(create: (bc) => BeritaPanelProvider()),
+        ChangeNotifierProvider(create: (bc) => BeritaLoadDataProvider()),
+      ],
+      builder: (context, Widget) {
+        return MaterialApp(
+          theme: ThemeData(
+              appBarTheme: AppBarTheme(
             backgroundColor: Color.fromARGB(255, 217, 232, 52),
-          )
-        ),
-        home: LoginView(),
-      );
-    }
-  ));
+          )),
+          home: LoginView(),
+        );
+      }));
 }
